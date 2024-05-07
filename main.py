@@ -14,7 +14,6 @@ class WoWo():
             print(f"An error has occured: {ex}")
 
 
-
-a = WoWo("Andrii", 29)
-
-a.print_smg(count=100)
+if __name__ == "__main__":
+    a = WoWo("Andrii", 29)
+    a.print_smg(count=100)

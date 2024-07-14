@@ -24,3 +24,8 @@ def get_cats_info(path: str) -> list[dict]:
         print(f"File reading error: {ve}")
     except Exception as e:
         print(f"An error occurred: {e}")
+
+
+if __name__ == "__main__":
+    cats_info = get_cats_info("goit-pycore-hw-04\\task_2\\cats_data.txt")
+    print(cats_info)

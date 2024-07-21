@@ -6,7 +6,7 @@ from typing import Callable
 def generator_numbers(text: str) -> Generator[float, None, None]:
 
     # Regular expression to find valid numbers in the text
-    pattern = ...
+    pattern = r"\b\d+\.\d+\b"
     matches = re.findall(pattern, text)
     for match in matches:
         yield float(match)

@@ -1,4 +1,7 @@
-# from address_book import AddressBook
+from components.address_book import AddressBook
+from components.record import Record
+
+
 # def main():
 #     book = AddressBook()
 #     print("Welcome to the assistant bot!")

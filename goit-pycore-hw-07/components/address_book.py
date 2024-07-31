@@ -38,11 +38,13 @@ class AddressBook(UserDict):
             for record in self.data.values():
                 contact = {
                     "name": record.name.value,
-                    "birthday": record.birthday.bd_date.strftime("%d.%m.%Y"),
+                    "phones": [phone.value for phone in record.phones],
+                    "birthday": record.birthday.bd_date.strftime("%d.%m.%Y")
+                    if record.birthday
+                    else "None",
                 }
                 contacts_list.append(contact)
             return contacts_list
-
         except Exception as e:
             print(f"Unknown error: {e}")
 
@@ -65,6 +67,8 @@ class AddressBook(UserDict):
             for user in users:
                 name = user["name"]
                 birthday = user["birthday"]
+                if birthday == "None":
+                    continue
                 birthday_date = datetime.strptime(birthday, "%d.%m.%Y").date()
 
                 # Set birthday to current year
@@ -88,7 +92,7 @@ class AddressBook(UserDict):
                         {
                             "name": name,
                             "congratulation_date": congratulation_date.strftime(
-                                "%Y.%m.%d"
+                                "%d.%m.%Y"
                             ),
                         }
                     )

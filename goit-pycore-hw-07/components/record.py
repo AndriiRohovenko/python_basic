@@ -23,8 +23,10 @@ class Record:
         try:
             phone = Phone(phone_number)
             self.phones.append(phone)
+            return True
         except Exception as e:
             print(f"Failed to add phone: {e}")
+            return False
 
     @input_error
     def remove_phone(self, phone_number):

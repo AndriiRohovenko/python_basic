@@ -22,6 +22,7 @@ class Phone(Field):
 
     @staticmethod
     def validate_phone(value):
+        # print(len(value))
         return value.isdigit() and len(value) == 10
 
 
